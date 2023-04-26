@@ -1,0 +1,30 @@
+import pygame
+
+# Initialize Pygame
+pygame.init()
+
+# Load image
+image = pygame.image.load("image.jpg")
+
+# Set new width and height
+new_width = 300
+new_height = 200
+
+# Resize image
+resized_image = pygame.transform.scale(image, (new_width, new_height))
+
+# Display the original and resized image
+screen = pygame.display.set_mode((600, 400))
+screen.blit(image, (0, 0))
+screen.blit(resized_image, (310, 0))
+pygame.display.flip()
+
+# Game loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+# Quit Pygame
+pygame.quit()

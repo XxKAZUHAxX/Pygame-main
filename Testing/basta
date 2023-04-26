@@ -1,0 +1,40 @@
+import pygame
+
+# Initialize Pygame
+pygame.init()
+
+# Set the screen size
+screen_size = (640, 480)
+
+# Create the screen
+screen = pygame.display.set_mode(screen_size)
+
+# Load the image
+image = pygame.image.load("pin1.png")
+
+# Run the game loop
+running = True
+while running:
+    # Handle events
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Fill the screen with white
+    screen.fill((255, 255, 255))
+
+    # Set the position of the image
+    x, y = 100, 100
+    image_rect = image.get_rect()
+    image_rect.x = x
+    image_rect.y = y
+
+    # Blit the image onto the screen
+    screen.blit(image, image_rect)
+
+    # Update the screen
+    pygame.display.flip()
+
+# Quit Pygame
+pygame.quit()
+
